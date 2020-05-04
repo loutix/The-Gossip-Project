@@ -1,0 +1,11 @@
+<h1>Welcome landing page</h1>
+<p>Bonjour, voici ton prénom : <%= @first_name %>  </p>
+<p>La liste :  </p>
+
+<% Gossip.all.each_with_index do |gossips, index|%>
+  <p>
+    <%= gossips.title %><br/>
+    <%= gossips.user.first_name %><br/>
+	<a href="/gossips/<%= index %>">lien.</a> 	
+  </p>
+<% end %>
