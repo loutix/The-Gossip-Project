@@ -1,11 +1,21 @@
-<h1>Welcome landing page</h1>
-<p>Bonjour, voici ton prénom : <%= @first_name %>  </p>
-<p>La liste :  </p>
 
-<% Gossip.all.each_with_index do |gossips, index|%>
-  <p>
-    <%= gossips.title %><br/>
-    <%= gossips.user.first_name %><br/>
-	<a href="/gossips/<%= index %>">lien.</a> 	
-  </p>
+
+<div class="container-fluid">
+  <div class="texte-bienvenue text-center">
+    <h1>Le site des gossips</h1>
+  </div>
+  <div class="row" style= "display: flex; flex-flow: row wrap; justify-content: space-around;">
+    <% Gossip.all.each do |gossips|%>
+      <div class="card" style="width: 25rem" >
+        <div class="card-body" style="background-color:green;">
+          <h5 class="card-title text-center" ><%= gossips.title %><br /></h5>
+          <p class="card-text text-center">- <%= gossips.user.first_name %></p><br />
+            <a href="/gossips/<%= gossips.id %>" class="btn btn-block" style="background-color: #yellow">Voir le Gossip</a>
+        </div>
+      </div>
+
+
+
+
+
 <% end %>

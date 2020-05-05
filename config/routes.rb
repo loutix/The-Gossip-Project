@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
 get '/contact', to: 'static#contact'
 get '/team', to: 'static#team'
-get '/welcome/:first_name', to: 'dynamique#first_name'
+get '/welcome(/:first_name)', to: 'dynamique#first_name'
 get '/gossips/:id/', to: 'dynamique#show_potin'
+get '/user/:id/', to: 'dynamique#user'
 end
